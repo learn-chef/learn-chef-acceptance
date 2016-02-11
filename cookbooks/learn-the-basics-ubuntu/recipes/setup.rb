@@ -16,10 +16,17 @@ execute 'install Chef DK' do
 end
 
 control_group 'validate Chef DK installation' do
-  control 'validate version' do
-    describe command('chef --version') do
-      its (:stdout) { should match /Chef Development Kit Version: #{chefdk_version}/ }
-      its (:stdout) { should match /chef-client version: #{chef_client_version}/ }
+  # control 'validate version' do
+  #   describe command('chef --version') do
+  #     its (:stdout) { should match /Chef Development Kit Version: #{chefdk_version}/ }
+  #     its (:stdout) { should match /chef-client version: #{chef_client_version}/ }
+  #   end
+  # end
+
+  control 'validate successful run' do
+    describe command('chef verify') do
+      its (:stdout) { should match /Verification of .+ succeeded/ }
+      its (:stdout) { should_not match /Verification of .+ failed/ }
     end
   end
 end
