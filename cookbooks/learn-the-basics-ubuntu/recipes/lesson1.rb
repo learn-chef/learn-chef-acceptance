@@ -77,6 +77,7 @@ f1_2_2 = stdout_file(cache, '1.2.2')
 f1_2_3 = stdout_file(cache, '1.2.3')
 control_group '1.2.1' do
   control 'validate output' do
+    before { skip unless validate_sample_output? }
     describe file(f1_2_1) do
       step2_matchers.each do |matcher|
         its(:content) { should match matcher }
@@ -89,6 +90,7 @@ control_group '1.2.1' do
     end
   end
   control 'validate output' do
+    before { skip unless validate_sample_output? }
     describe file(f1_2_3) do
       its(:content) { should match /\* file\[\/tmp\/motd\] action create \(up to date\)$/ }
       its(:content) { should match /Chef Client finished, 0\/1 resources updated in \d\d seconds$/ }

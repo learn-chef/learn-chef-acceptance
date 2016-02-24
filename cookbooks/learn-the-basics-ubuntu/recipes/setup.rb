@@ -8,8 +8,8 @@ include_recipe 'apt::default'
 package 'curl'
 package 'tree'
 
-chefdk_version = '0.11.0'
-chef_client_version = '12.7.0'
+chefdk_version = '0.11'
+chef_client_version = '12.7'
 
 unless node['use_system_chef']
   execute 'install Chef DK' do
@@ -19,6 +19,7 @@ unless node['use_system_chef']
 
   control_group 'validate Chef DK installation' do
     control 'validate version' do
+      before { skip unless validate_tool_versions? }
       describe command('chef --version') do
         its (:stdout) { should match /Chef Development Kit Version: #{chefdk_version}/ }
         its (:stdout) { should match /chef-client version: #{chef_client_version}/ }
