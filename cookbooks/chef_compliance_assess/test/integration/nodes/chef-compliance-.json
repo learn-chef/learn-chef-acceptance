@@ -1,0 +1,9 @@
+{
+  "id":"chef-compliance",
+  "node_name":"chef-compliance",
+  "automatic": {
+    "hostname":"chef-compliance",
+    "fqdn":"chef-compliance.local",
+    "ipaddress":"192.168.77.77"
+  }
+}

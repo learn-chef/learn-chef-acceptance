@@ -1,0 +1,21 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-7.2
+
+suites:
+  - name: node
+    driver:
+      customize:
+        memory: 256
+      vm_hostname: node-1.local
+      network:
+        - ["private_network", {ip: "192.168.77.78"}]
+    run_list:
+      - recipe[chef_compliance_assess]
+    attributes:

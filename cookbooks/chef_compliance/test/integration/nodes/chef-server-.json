@@ -1,0 +1,9 @@
+{
+  "id":"chef-server",
+  "node_name":"chef-server",
+  "automatic": {
+    "hostname":"chef-server",
+    "fqdn":"chef-server.local",
+    "ipaddress":"192.168.88.88"
+  }
+}
