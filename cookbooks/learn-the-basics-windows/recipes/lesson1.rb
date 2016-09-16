@@ -71,7 +71,7 @@ step3_matchers = [
   /\s{4}\- create new file C:\\Users\\Administrator\\chef-repo\\settings.ini/,
   /\s{4}\- update content in file C:\\Users\\Administrator\\chef-repo\\settings.ini from none to .+/,
   /\s{4}\-\-\- C:\\Users\\Administrator\\chef-repo\\settings.ini/,
-  /\s{4}\+\+\+ C:\\Users\\Administrator\\chef-repo\/chef-settings.ini/,
+  /\s{4}\+\+\+ C:\\Users\\Administrator\\chef-repo\/chef-settings/,
   /\s{4}\+greeting=hello world/,
   /Running handlers:/,
   /Running handlers complete/,
