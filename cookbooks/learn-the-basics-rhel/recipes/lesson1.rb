@@ -38,7 +38,7 @@ end
 
 workflow_task '1.2.1' do
   cwd working
-  command 'chef-client --local-mode hello.rb --no-color --force-formatter'
+  command 'chef-client --local-mode hello.rb --no-color --force-formatter --log_level warn'
 end
 
 workflow_task '1.2.2' do
@@ -48,7 +48,7 @@ end
 
 workflow_task '1.2.3' do
   cwd working
-  command 'chef-client --local-mode hello.rb --no-color --force-formatter'
+  command 'chef-client --local-mode hello.rb --no-color --force-formatter --log_level warn'
 end
 
 step2_matchers = [
@@ -111,7 +111,7 @@ end
 
 workflow_task '1.3.1' do
   cwd working
-  command 'chef-client --local-mode hello.rb --no-color --force-formatter'
+  command 'chef-client --local-mode hello.rb --no-color --force-formatter --log_level warn'
 end
 
 workflow_task '1.3.2' do
@@ -145,7 +145,7 @@ end
 
 workflow_task '1.4.1' do
   cwd working
-  command 'chef-client --local-mode hello.rb --no-color --force-formatter'
+  command 'chef-client --local-mode hello.rb --no-color --force-formatter --log_level warn'
 end
 
 workflow_task '1.4.2' do
@@ -183,7 +183,7 @@ end
 
 workflow_task '1.5.1' do
   cwd working
-  command 'chef-client --local-mode goodbye.rb --no-color --force-formatter'
+  command 'chef-client --local-mode goodbye.rb --no-color --force-formatter --log_level warn'
 end
 
 workflow_task '1.5.2' do
