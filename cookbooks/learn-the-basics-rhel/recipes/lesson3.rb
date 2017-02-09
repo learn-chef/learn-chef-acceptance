@@ -109,7 +109,7 @@ end
 # Run chef-client.
 workflow_task '3.4.1' do
   cwd repo
-  command "sudo chef-client --local-mode --runlist 'recipe[learn_chef_httpd]' --no-color --force-formatter"
+  command "sudo chef-client --local-mode --runlist 'recipe[learn_chef_httpd]' --no-color --force-formatter --log_level warn"
 end
 
 f3_4_1 = stdout_file(cache, '3.4.1')

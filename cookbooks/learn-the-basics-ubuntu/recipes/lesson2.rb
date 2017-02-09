@@ -39,13 +39,13 @@ end
 # Run chef-client.
 workflow_task '2.1.1' do
   cwd working
-  command 'sudo chef-client --local-mode webserver.rb --no-color --force-formatter'
+  command 'sudo chef-client --local-mode webserver.rb --no-color --force-formatter --log_level warn'
 end
 
 # Run chef-client again.
 workflow_task '2.1.2' do
   cwd working
-  command 'sudo chef-client --local-mode webserver.rb --no-color --force-formatter'
+  command 'sudo chef-client --local-mode webserver.rb --no-color --force-formatter --log_level warn'
 end
 
 f2_1_1 = stdout_file(cache, '2.1.1')
@@ -93,7 +93,7 @@ end
 # Run chef-client.
 workflow_task '2.2.1' do
   cwd working
-  command 'sudo chef-client --local-mode webserver.rb --no-color --force-formatter'
+  command 'sudo chef-client --local-mode webserver.rb --no-color --force-formatter --log_level warn'
 end
 
 f2_2_1 = stdout_file(cache, '2.2.1')
@@ -143,7 +143,7 @@ end
 # Run chef-client.
 workflow_task '2.3.1' do
   cwd working
-  command 'sudo chef-client --local-mode webserver.rb --no-color --force-formatter'
+  command 'sudo chef-client --local-mode webserver.rb --no-color --force-formatter --log_level warn'
 end
 
 f2_3_1 = stdout_file(cache, '2.3.1')
