@@ -8,7 +8,7 @@ property :command, String, required: true
 # the directory to run the command.
 property :cwd, String, required: true
 # directory to write output to.
-property :cache, String, required: false, default: nil
+property :cache, [String, nil], required: false, default: nil
 # the shell to run the command from. options are :bash and :powershell.
 property :shell, Symbol, required: false, default: :current
 # a Hash of environment variables to set before the command is run.
